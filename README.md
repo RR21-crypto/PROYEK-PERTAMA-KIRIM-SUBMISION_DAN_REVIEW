@@ -69,6 +69,13 @@ dari 7 kolom diatas memiliki missing value pada High sebanyak 12 sample dan pada
 ![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/e40ec581-ea69-42f1-a68e-558e7eafcecb)
 | Variable | Missing value |
 | --- | --- |
+| Date | 0 |
+| Open | 0 |
+| High | 12 |
+| Low | 39 |
+| Adj Close  | 0 |
+| Volume | 0 |
+
  dalam mengerjakan projek ini untuk lebih memahami dataset yang telah dipilih terlihar kita mesti melakukan pengecekan terhadap data set yang kita gunakana .Untuk kasus ini dataset kita  memiliki beberapa missing value, dalam kasus ini kita memmiliki misiing value pada kolom High dan kolom Low. setelah mengetahui nilai yanh kosong , selanjutya menghadapi missing value memiliki 2 cara populer yaitu dihilangkan atau dengan mengisinya dengan menggunakan nilai mean (rata-rata).dalam projek ini saya memilih untuk mengisi missing value dengan menggunakan Simple Imputer. pemilihan Simple Imputer di  sebabkan sedikitnyay jumlah sample yang kita milki, tentu jika kita mendrop data yang  memiliki missing value akan mempengaruhi model yang kita kembangkan saat ini, oleh karena itu Simple Imputer menjadi pilihan kami dalam mengembanhkan model ini. 
 
 
