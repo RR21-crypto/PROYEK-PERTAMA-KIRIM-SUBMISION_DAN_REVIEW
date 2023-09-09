@@ -46,7 +46,6 @@ Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
 ## Data Understanding
  untuk projek kali ini dataset yang akan digunakan adalah dataset dari https://finance.yahoo.com/quote/%5ERUT/history?period1=1535932800&period2=1693699200&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true
 
- ![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/6f45732b-1f81-43cb-99ac-f471708a489d)
 
 |  Date  | Open | High | Low	 | Close | Adj Close | Volume |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -68,6 +67,10 @@ data set yang kitamerupakan data set dari Sep 04, 2018 - Sep 04, 2023 pada Russe
 - volume : berapa banyak transaksi yang terjadi pada hari tersebut
 dari 7 kolom diatas memiliki missing value pada High sebanyak 12 sample dan pada Low sebanyak 39 sample.
 
+setelah mengetahui mengenai data set yang kita miliki , kita akan lebih memahami data jika kita melihat data dalam bentuk  ilustrasi.
+![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/06bb9f98-c273-4dc3-b263-8fda560656ed)
+
+dari gambar diatas terlihat bahwa semua data memiliki bentuk yang sama atau mirip , namun berbeda dengan plot untuk Volume , dari gambar plot ini dapat mengindikasikan bahwa Volume memiliki keterkaitan dengan feature lain sangat lemah , untuk membuktikannya kita akan melihat di pembahasan selanjutnya.
 
 
 ### Exploratory Data Analysis
@@ -81,7 +84,7 @@ dari 7 kolom diatas memiliki missing value pada High sebanyak 12 sample dan pada
 | Adj Close  | 0 |
 | Volume | 0 |
 
- dalam mengerjakan projek ini untuk lebih memahami dataset yang telah dipilih terlihar kita mesti melakukan pengecekan terhadap data set yang kita gunakana .Untuk kasus ini dataset kita  memiliki beberapa missing value, dalam kasus ini kita memmiliki misiing value pada kolom High dan kolom Low. setelah mengetahui nilai yanh kosong , selanjutya menghadapi missing value memiliki 2 cara populer yaitu dihilangkan atau dengan mengisinya dengan menggunakan nilai mean (rata-rata).dalam projek ini saya memilih untuk mengisi missing value dengan menggunakan Simple Imputer. pemilihan Simple Imputer di  sebabkan sedikitnyay jumlah sample yang kita milki, tentu jika kita mendrop data yang  memiliki missing value akan mempengaruhi model yang kita kembangkan saat ini, oleh karena itu Simple Imputer menjadi pilihan kami dalam mengembanhkan model ini. 
+ dalam mengerjakan projek ini untuk lebih memahami dataset yang telah dipilih , tentunya mesti melakukan pengecekan terhadap data set yang di gunakana .Untuk kasus ini dataset  memiliki beberapa missing value, dalam kasus ini ,memiliki missing value pada kolom High dan kolom Low. setelah mengetahui nilai yang kosong , selanjutya menghadapi missing value memiliki 2 cara populer yaitu dihilangkan atau dengan mengisinya dengan menggunakan nilai mean (rata-rata).dalam projek ini saya memilih untuk mengisi missing value dengan menggunakan *Simple Imputer*. pemilihan *Simple Imputer* di  sebabkan  jumlah sample yang kita milki, tentu jika kita mendrop data yang  memiliki missing value akan mempengaruhi model yang kita kembangkan saat ini, oleh karena itu *Simple Imputer* menjadi pilihan kami dalam mengembangkan model ini. 
 
 
 ## Data Preparation
@@ -91,8 +94,8 @@ dalam melakukan data preparation, menghapus fitur yang tidak  memiliki effect be
 di dalam projek ini kita menggunakan sns plot , untuk melihat keterkaitan satu fitur dengan fitur lain,dalam projek saya telah melampirkan dua cara melihatnya, yaitu dengan menggunakan sns plot dan menggunakan Correlation Matrix untuk Fitur Numerik.
 ![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/8c4a28ac-ce6e-4138-ad27-9d198a1f38cf)
 
-Correlation Matrix untuk Fitur Numerik sanagat mudah di pahami , dengan melihat jika angka lebih dekat ke 1 atau -1 maka keterkaitan antar 2 fitur tersebut sangat kuat dan saling berpengaruh . namun jika lebih dekat dengan 0 maka terjadi sebaliknya. namun disini kita harus membuat model yang lebih ringan dan mempercepat model kita mmeprkirakan nilai saham tentunya kita perlu membuang kolom atau feature yang tidak di perlukan. disini saya memutuskan untuk menghapus fitur Volume,Date .Disebabkan kedua fitur memiliki effect yang sangat kecil dengan Adj Close.  tentunya jika kita merujuk pada correlation tabble akan berlawanan, namun disini pemilihan kedua fitur ini di hapus tentu memiliki alasan. untuk penhapusan date ini disebabkan nilai yang di ambil di data ini memiliki nilai yang sama semua yaitu satu, hal itu disebabkakn nilai diambil perhari. seperti akan terlihat pada gambar di bawah.
-![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/961a9445-9823-4a10-8012-df152071e04c)
+Correlation Matrix untuk Fitur Numerik sanagat mudah di pahami , dengan melihat jika angka lebih dekat ke 1 atau -1 maka keterkaitan antar 2 fitur tersebut sangat kuat dan saling berpengaruh . namun jika lebih dekat dengan 0 maka terjadi sebaliknya. namun disini kita harus membuat model yang lebih ringan dan mempercepat model kita memperkirakan nilai saham tentunya  perlu membuang kolom atau feature yang tidak di perlukan. disini saya memutuskan untuk menghapus fitur Volume,Date .Disebabkan kedua fitur memiliki effect yang sangat kecil dengan Adj Close.  tentunya jika merujuk pada correlation tabble akan berlawanan, namun disini pemilihan kedua fitur ini di hapus tentu memiliki alasan. untuk penhapusan date ini disebabkan nilai yang di ambil di data ini memiliki nilai yang sama semua yaitu satu, hal itu disebabkakn nilai diambil perhari.
+
 untuk penghapusan vitur volume ini akan merujuk pada gambar di bawah .Dimana kita dapat melihat bahwa semua numerik fitur memiliki bentuk yang mirip seiring bertambahnya sammple namun terjadi perbedaan dengan kolom numerik yang memiliki bentuk yang berbeda.
 ![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/06bb9f98-c273-4dc3-b263-8fda560656ed)
 
@@ -119,9 +122,17 @@ Kekurangan:
 - Sensitif terhadap Noise: K-NN rentan terhadap gangguan dan noise dalam data, yang dapat menghasilkan hasil yang tidak stabil.
 - Komputasi Mahal: Perhitungan jarak antara titik data bisa mahal, terutama jika datasetnya besar.
 - Kurangnya Interpretasi: Model K-NN tidak memberikan wawasan tentang faktor-faktor yang mendasari prediksi, sehingga sulit untuk memahami mengapa model mengambil keputusan tertentu.
+
   
 ### Random Forest:
-algoritma Random forest merupakan algoritma yang menjalankan sejumlah Decision tree secara bersamaan  dari sample yang berbeda dalam data set yang sama.Dalam hal ini semakin banyak Decision tree yang kita gunakan tentu akan semakin bagus hal ini juga beresiko untuk over fitting.Dalam menentuka nilai yang di hasilkan oleh algoritma ini dalam projek ini , menggunakan nilai rata rata yang mana akan kita lihat hasilnya pada evaluasi model.
+algoritma Random forest merupakan algoritma yang menjalankan sejumlah Decision tree secara bersamaan  dari sample yang berbeda dalam data set yang sama.Dalam hal ini semakin banyak Decision tree yang kita gunakan tentu akan semakin bagus hal ini juga beresiko untuk over fitting.Dalam menentuka nilai yang di hasilkan oleh algoritma ini dalam projek ini , menggunakan nilai rata rata yang mana akan kita lihat hasilnya pada evaluasi model. dalam projek ini kami menggunakan parameter untuk membangun model ini diantaranya : 
+- n_estimator: jumlah trees (pohon) di forest. Di sini kita set n_estimator=50.
+- max_depth: kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan.
+- random_state: digunakan untuk mengontrol random number generator yang digunakan.
+- n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel
+
+Setelah mengetahui parameter pada kode , tentunya algoritma ini memiliki beberapa kekurangan dan kelebihan diantaranya : 
+
  Kelebihan:
 
 - Akurasi Tinggi: Random Forest sering memberikan kinerja yang sangat baik dalam memprediksi dengan akurasi tinggi karena menggabungkan banyak pohon keputusan.
@@ -132,8 +143,9 @@ Kekurangan:
 - Kompleksitas Model: Karena model terdiri dari banyak pohon, Random Forest bisa menjadi kompleks dan sulit untuk diinterpretasi.
 - Waktu Pelatihan: Proses pelatihan Random Forest mungkin memerlukan waktu yang lama, terutama jika terdapat banyak pohon atau fitur dalam dataset.
 - Pemilihan Fitur: Random Forest cenderung memberikan bobot yang tinggi pada fitur yang umumnya informatif, sehingga fitur-fitur yang lebih jarang mungkin diabaikan.
+
 ### Boosting Algorithm (misalnya, AdaBoost, Gradient Boosting):
-Algoritma ini merupakan algoritma yang mirip dengan random forest namun  yang mmebedakan adalah cara kerja dari algoritma ini. di random forest kita mengerjakan secara paralel dalam waktu bersama , namun hal ini kebalikan di boosting kita menjalankan model secara satu persatu , sehingga jika terjadi false akan di perbaiki di sesi selanjutnya. untuk kekurangan dan kelebihan algoritma ini sebagai berikut : 
+Algoritma ini merupakan algoritma yang mirip dengan random forest namun  yang mmebedakan adalah cara kerja dari algoritma ini. di random forest kita mengerjakan secara paralel dalam waktu bersama , namun hal ini kebalikan di boosting kita menjalankan model secara satu persatu , sehingga jika terjadi false akan di perbaiki di sesi selanjutnya. Untuk menjalankan algoritma ini tentunya membutuhkan  beberapa paramerter  dalam kode , parameter yang digunakan adalah ***learning _ rate*** yang berfungsiuntuk menetaplan bobot pada setiap regresor pada saat iterasi boosting dan ***random_state*** digunakan untuk mengontrol random number yang di gunakan. untuk kekurangan dan kelebihan algoritma ini sebagai berikut : 
 
 Kelebihan:
 
