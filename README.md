@@ -27,7 +27,6 @@ Tujuan proyek ini dibuat adalah sebagai berikut :
 - memberikan perkiraan kepada trader di tengah resesi ekonomi global  untuk saham Russel 2000 
 
 ### Problem Statement
-- Bagaimana cara mengetahui secara tepat dan cepat harga saham Russel 2000 ?
 - Fitur apa saja yang mempengaruhi dalam naik dan turunnya harga suatu saham terkhusus Russell 2000 ?
 - agoritma apa yang paling tepat untuk memperkirakan harga saham Russel 2000 ?
 
@@ -68,7 +67,8 @@ dari 7 kolom diatas memiliki missing value pada High sebanyak 12 sample dan pada
 
 ### Exploratory Data Analysis
 ![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/e40ec581-ea69-42f1-a68e-558e7eafcecb)
-
+| Variable | Missing value |
+| --- | --- |
  dalam mengerjakan projek ini untuk lebih memahami dataset yang telah dipilih terlihar kita mesti melakukan pengecekan terhadap data set yang kita gunakana .Untuk kasus ini dataset kita  memiliki beberapa missing value, dalam kasus ini kita memmiliki misiing value pada kolom High dan kolom Low. setelah mengetahui nilai yanh kosong , selanjutya menghadapi missing value memiliki 2 cara populer yaitu dihilangkan atau dengan mengisinya dengan menggunakan nilai mean (rata-rata).dalam projek ini saya memilih untuk mengisi missing value dengan menggunakan Simple Imputer. pemilihan Simple Imputer di  sebabkan sedikitnyay jumlah sample yang kita milki, tentu jika kita mendrop data yang  memiliki missing value akan mempengaruhi model yang kita kembangkan saat ini, oleh karena itu Simple Imputer menjadi pilihan kami dalam mengembanhkan model ini. 
 
 
