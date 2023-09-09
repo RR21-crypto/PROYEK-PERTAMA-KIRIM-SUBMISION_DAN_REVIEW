@@ -166,8 +166,22 @@ Untuk evaluasi pada machine learning model ini, metrik yang digunakan adalah mea
 
 ![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/af742e8a-091a-409b-8860-3c0e52b6d173)
 
-dalam proyek ini saya mendpatkan hasil dengan melakukan perbandingan antara ketiga algoritma yaitu Random Forest,K-Nearest Neighbo, Boosting Algorithm. di dapatkan bahwa algoritma rainforest merupakan algoritma dengan hasil prediksi yang mendekati dengan nilai asal yaitu 1848.7	
+ tentunya terjadi perbedaan. perbedaan ini lah yang kita sebut sebagai eror.Dalam hal ini kita dapat menghitung secara manual dengan formula yang di atas.Dalam projek ini setiap algoritma memiliki eror yang berbeda , nilai eror akan di tampilkan dalam betuk table di bawah 
 
-![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/a08be2a2-ff81-4a0f-9fa9-c1f4616b6f42)
+| | RF | KNN | Boosting |
+| --- | --- | --- | --- |
+|test | 0.05 | 0.11 | 0.32 |
+| train | 0.01 | 0.1 | 0.13 |
 
-dari gambar di atas dapat di lihat ,dari ketiga perkiraan peforma dari algoritam rain forest menunjukan ketepatan prediksi yang mendekati dengan nilai aslinya. dari pembahasan yan gpanjang ini tentu hal ini akan sangat berhubunga dengan pasar forex.Sebagai trader tentu saja kebutuhan ketepatan dalam memperkirakan nilai menadi hal utama dalam kasus ini. Apalagi seperti yang saya katakan , ditengah resesi global perlu adanya analisa data  yang banyak untuk memperkirakan harga pasar. Dengan adanya model ini di harapkan mempermudah kerja Trader yang ingin invest pada saham Russel 2000.
+
+
+dalam proyek ini saya mendpatkan hasil dengan melakukan perbandingan antara ketiga algoritma yaitu Random Forest,K-Nearest Neighbor, Boosting Algorithm. di dapatkan bahwa algoritma rainforest merupakan algoritma dengan hasil prediksi yang mendekati dengan nilai asal yaitu 202. 
+
+|  | y_true | prediksi_KNN | prediksi_RF	 | prediksi_Boosting |
+| --- | --- | --- | --- | --- |  
+| 202 | 1849.930054	 | 1848.9| 1848.7 | 1854.0 |
+|163| 1769.209961 |1770.3	 | 1768.8 | 1764 | 
+| 146 | 1752.130005 | 1754.1	 | 1752.5 | 1759.7 | 
+
+
+dari gambar di atas dapat di lihat ,dari ketiga perkiraan peforma dari algoritam rain forest menunjukan ketepatan prediksi yang mendekati dengan nilai aslinya, hal ini selaras dengan tabel MSE yang memperlihatkan bahwa algoritma ** Rain Forest ** adalah paling terkecil diantara kedua algoritma lain . dari pembahasan yang panjang ini tentu hal ini akan sangat berhubungan dengan pasar forex.Sebagai trader tentu saja kebutuhan ketepatan dalam memperkirakan nilai menadi hal utama dalam kasus ini. Apalagi seperti yang saya katakan , ditengah resesi global perlu adanya analisa data  yang banyak untuk memperkirakan harga pasar. Dengan adanya model ini di harapkan mempermudah kerja Trader yang ingin invest pada saham Russel 2000.
