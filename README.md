@@ -48,6 +48,11 @@ Solusi yang dapat dilakukan agar goals terpenuhi adalah sebagai berikut :
 
  ![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/6f45732b-1f81-43cb-99ac-f471708a489d)
 
+|  Date  | Open | High | Low	 | Close | Adj Close | Volume |
+| --- | --- | --- | --- | --- | --- | --- |
+| 9/6/2022 | 1813.180 | 1815.150 | 1786.680 | 1792.3190 |1792.30 | 41273400 |
+| 9/7/2022 | 1789.560 |1832.560 | 1787.430 | 1832.000 | 1832.0000 | 389030 |
+| 9/8/2022 | 1857.14 | 1884.900 | 1857.140 | 1882.840 | 1882.840 | 390190 |
 
 data set yang kitamerupakan data set dari Sep 04, 2018 - Sep 04, 2023 pada Russell 2000 (^RUT) yang memmiliki 1258 sample dan 7 kolom diantaranya :
 - date : tanggal data terekam
@@ -66,7 +71,7 @@ dari 7 kolom diatas memiliki missing value pada High sebanyak 12 sample dan pada
 
 
 ### Exploratory Data Analysis
-![image](https://github.com/RR21-crypto/PROYEK-PERTAMA-KIRIM-SUBMISION_DAN_REVIEW/assets/81364035/e40ec581-ea69-42f1-a68e-558e7eafcecb)
+
 | Variable | Missing value |
 | --- | --- |
 | Date | 0 |
